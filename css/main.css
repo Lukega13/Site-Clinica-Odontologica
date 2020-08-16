@@ -323,9 +323,6 @@ body {
 }
 
 
-
-
-
   
 
   /*menu-endereços*/
@@ -334,49 +331,29 @@ body {
   margin: 0;
   background-color: #29a5b8;
   height: 100px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
   }
-  /*Imagens*/
+  /*Endereços*/
   #endereço {
-  position: relative;
-  left: 8%;
-  width:19%; 
-  top: 24px;
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    box-sizing: border-box;
   }
-  #endereço-2 {
-  position: relative;
-  bottom: 24px;
-  left: 33%;
-  width: 15%;
+  #endereço span {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    margin: 0 0 0 0.5vw;
   }
-  #endereço-3 {
-  position: relative;
-  bottom: 72px;
-  left: 53%;
-  width: 16%;
-  }
-  #endereço-4 {
-  position: relative;
-  width: 18%;
-  bottom: 120px;
-  left: 75%;
-  }
-  /*Textos*/
-  .item-tittle {
-  padding-left: 10px;
-  position: absolute;
-  bottom: 55%;
-  font-size: 18px;
-  font-family: montserrat;
-  color: black;
-  }
-  .descrição {
-  color: black;
-  bottom: 7%;
-  font-size: 16px;
-  padding-left: 10px;
-  position: absolute;
-  font-family: Agency -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  }
+
+
 
   /*Quadros-Diversos*/
   #quadro-diversos{
