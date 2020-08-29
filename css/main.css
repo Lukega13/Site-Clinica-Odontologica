@@ -322,7 +322,10 @@ body {
   font-style: 18px;
 }
 
-
+input:focus, 
+textarea:focus {
+  outline: none;
+}
   
 
   /*menu-endereços*/
