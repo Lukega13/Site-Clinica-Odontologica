@@ -39,33 +39,26 @@
         <div id="carousel" class="carousel slide carousel-fade" data-ride="carousel">
 
             <div id="carousel-inner">
-                <ul>
-                    <li id="carousel-item">
-                        <img src="./img/fundo-provisório.jpg" class="carousel-image" alt="...">
-                    </li>
+                <img src="./img/fundo-provisório.jpg" id="carousel-image-1" alt="...">
 
-                    <li id="carousel-item">
-                        <img src="./img/banner.png" class="carousel-image" alt="...">
-                    </li>
+                <img src="./img/banner.png" id="carousel-image-2" alt="...">
 
-                    <li id="carousel-item">
-                        <img src="./img/fundo-provisório.jpg" class="carousel-image" alt="...">
-                    </li>
-                </ul>
+                <img src="./img/imagem3.png" id="carousel-image-3" alt="...">
+
 
 
                 <div id="carousel-indicators">
-                    <button onclick="setSlide(0)"></button>
+                    <button onclick="showSlide(1)" id="carousel-button-1"></button>
 
-                    <button onclick="setSlide(1)"></button>
+                    <button onclick="showSlide(2)" id="carousel-button-2"></button>
 
-                    <button onclick="setSlide(2)"></button>
+                    <button onclick="showSlide(3)" id="carousel-button-3"></button>
                 </div>
             </div>
 
 
-            <button id="carousel-prev" onclick="show(-1)">&lt;</button>
-            <button id="carousel-next" onclick="show(+1)">&gt;</button>
+            <!--<button id="carousel-prev" onclick="show(-1)">&lt;</button>
+            <button id="carousel-next" onclick="show(+1)">&gt;</button>-->
         </div>
 
 

@@ -17,7 +17,7 @@ body {
     position: absolute;
     width: 100%;
     height: 140px;
-    z-index: 2;
+    z-index: 100;
     background-color: rgb(255,255,255, 0.3);
     display: flex;
     align-items: center;
@@ -100,28 +100,42 @@ body {
     padding: 0;
     margin: 0;
     position: relative;
+    height: 100vh;
   }
 
   #carousel-inner {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    height: 100%;
   }
-  #carousel-inner ul {
-    padding: 0;
-    margin: 0;
-    display: flex;
-    overflow: hidden;
-  }
-  #carousel-inner ul li {
+  #carousel-inner img {
     position: relative;
     display: block;
-    list-style: none;
-    text-decoration: none;
-    text-align: center;
+    float: left;
+    height: 100%;
+    width: 100%;
+    margin-right: -100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transition: -webkit-transform 0.6s ease-in-out;
+    transition: transform 0.6s ease-in-out;
+    transition: transform 0.6s ease-in-out, -webkit-transform 0.6s ease-in-out;
+  }
+  #carousel-image-1 {
+    transition: all 1s ease;
+    opacity: 1;
+  }
+  #carousel-image-2 {
+    transition: all 1s ease;
+    opacity: 0;
+  }
+  #carousel-image-3 {
+    transition: all 1s ease;
+    opacity: 0;
   }
 
-  #carousel-prev, #carousel-next {
+  /*#carousel-prev, #carousel-next {
     font-size: 32px;
     display: flex;
     align-items: center; 
@@ -131,13 +145,14 @@ body {
     border-radius: 50%;
     width: 44px; 
     height: 44px;
+    z-index: 10;
   }
   #carousel-prev {
     position: absolute; left: 0; top: 50%;
   }
   #carousel-next {
     position: absolute; right: 0; top: 50%;
-  }
+  }*/
 
   #carousel-indicators {
     width: 100%;
@@ -149,6 +164,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 10;
   }
   #carousel-indicators button {
     height: 15px;
@@ -158,9 +174,12 @@ body {
     cursor: pointer;
     margin: 0 8px;
   }
+  #carousel-indicators button:focus {
+    outline: none;
+  }
   .slide-button-active {
     background-color: #2e87a4 !important;
-    
+    transition: 1s;
   }
 
 
