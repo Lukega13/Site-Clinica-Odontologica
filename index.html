@@ -8,7 +8,7 @@
 
 <body>
     <header id="menu-principal">
-        <div id="header-1">
+        <div id="header">
             <div id="logo">
                 <a href="" title="Nome do logo">
                     <img src="./img/wit-logo.png" style="height: 72px;" alt="Nome do logo">
@@ -34,44 +34,40 @@
                 </ul>
             </div>
         </div>
-        <div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-                <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner">
-                <div class="carousel-item active" data-interval="20000">
-                    <img src="./img/fundo-provisório.jpg" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Primeiro Slide</h5>
-                        <p>Texto do primeiro slide</p>
-                    </div>
-                </div>
-                <div class="carousel-item" data-interval="20000">
-                    <img src="./img/fundo-provisório.jpg" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Second slide label</h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    </div>
-                </div>
-                <div class="carousel-item" data-interval="20000">
-                    <img src="./img/fundo-provisório.jpg" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Third slide label</h5>
-                        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-                    </div>
+
+
+        <div id="carousel" class="carousel slide carousel-fade" data-ride="carousel">
+
+            <div id="carousel-inner">
+                <ul>
+                    <li id="carousel-item">
+                        <img src="./img/fundo-provisório.jpg" class="carousel-image" alt="...">
+                    </li>
+
+                    <li id="carousel-item">
+                        <img src="./img/banner.png" class="carousel-image" alt="...">
+                    </li>
+
+                    <li id="carousel-item">
+                        <img src="./img/fundo-provisório.jpg" class="carousel-image" alt="...">
+                    </li>
+                </ul>
+
+
+                <div id="carousel-indicators">
+                    <button onclick="setSlide(0)"></button>
+
+                    <button onclick="setSlide(1)"></button>
+
+                    <button onclick="setSlide(2)"></button>
                 </div>
             </div>
-            <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
+
+
+            <button id="carousel-prev" onclick="show(-1)">&lt;</button>
+            <button id="carousel-next" onclick="show(+1)">&gt;</button>
         </div>
+
 
 
     </header>
@@ -205,15 +201,8 @@
 
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-        crossorigin="anonymous"></script>
+
+    <script src="./js/main.js"></script>
 </body>
 
 </html>
