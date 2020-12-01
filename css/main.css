@@ -311,6 +311,16 @@ textarea:focus {
   width: 100%;
   max-width: 500px;
   }
+  #form-tittle {
+    text-align: center;
+    font-size: 32px;
+    margin: 30 0 30 0;
+  }
+  #form-subtittle {
+    text-align: center;
+    font-size: 28px;
+    margin: 10 0 30 0;
+  }
   #form {
   display: flex;
   flex-direction: column;
