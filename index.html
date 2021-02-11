@@ -16,19 +16,19 @@
             </div>
             <div id="menu-principal-urls">
                 <ul>
-                    <li class="menu-principal-urls-hover">
-                        <a href="index.html" class="menu-principal-urls-hover padding-urls">Início</a>
+                    <li class="menu-principal-url-active">
+                        <a href="index.html">Início</a>
                     </li>
-                    <li class="espaço menu-principal-urls-cor">
-                        <a href="equipe.html" class="menu-principal-urls-cor padding-urls">Profissionais</a>
+                    <li class="menu-principal-urls-cor">
+                        <a href="equipe.html">Profissionais</a>
                     </li>
-                    <li class="espaço menu-principal-urls-cor">
-                        <a href="procedimentos.html" class="menu-principal-urls-cor padding-urls">Procedimentos</a>
+                    <li class="menu-principal-urls-cor">
+                        <a href="procedimentos.html">Procedimentos</a>
                     </li>
-                    <li class="espaço menu-principal-urls-cor">
-                        <a href="sobre.html" class="menu-principal-urls-cor padding-urls">A Clínica</a>
+                    <li class="menu-principal-urls-cor">
+                        <a href="sobre.html">A Clínica</a>
                     </li>
-                    <li href="agendamento.html" class="espaço">
+                    <li href="agendamento.html">
                         <a href="agendamento.html" id="botao-agendar">Agendar</a>
                     </li>
                 </ul>
@@ -196,6 +196,80 @@
 
 
     <script src="./js/main.js"></script>
+
+    <script>
+        //Carousel
+        window.onload = mainTimer()
+        var intervalo = setInterval(mainTimer, 30000)
+
+        function mainTimer() {
+            setTimeout(timer, 0)
+            setTimeout(timer2, 10000)
+            setTimeout(timer3, 20000)
+        }
+
+        function timer() {
+            showSlide(1)
+        }
+        function timer2() {
+            showSlide(2)
+        }
+        function timer3() {
+            showSlide(3)
+        }
+
+
+        function showSlide(number) {
+            var carousel1 = document.getElementById('carousel-image-1')
+            var carousel2 = document.getElementById('carousel-image-2')
+            var carousel3 = document.getElementById('carousel-image-3')
+
+
+            if (number == 1) {
+                document.getElementById('carousel-button-1').classList.add('slide-button-active')
+                document.getElementById('carousel-button-2').classList.remove('slide-button-active')
+                document.getElementById('carousel-button-3').classList.remove('slide-button-active')
+
+                carousel1.style.opacity = '1'
+                carousel2.style.opacity = '0'
+                carousel3.style.opacity = '0'
+
+                carousel1.style.transition = '3s'
+                carousel2.style.transition = '3s'
+                carousel3.style.transition = '3s'
+
+            } else if (number == 2) {
+                document.getElementById('carousel-button-1').classList.remove('slide-button-active')
+                document.getElementById('carousel-button-2').classList.add('slide-button-active')
+                document.getElementById('carousel-button-3').classList.remove('slide-button-active')
+
+                carousel1.style.opacity = '0'
+                carousel2.style.opacity = '1'
+                carousel3.style.opacity = '0'
+
+                carousel1.style.transition = '3s'
+                carousel2.style.transition = '3s'
+                carousel3.style.transition = '3s'
+
+            } else if (number == 3) {
+                document.getElementById('carousel-button-1').classList.remove('slide-button-active')
+                document.getElementById('carousel-button-2').classList.remove('slide-button-active')
+                document.getElementById('carousel-button-3').classList.add('slide-button-active')
+
+                carousel1.style.opacity = '0'
+                carousel2.style.opacity = '0'
+                carousel3.style.opacity = '1'
+
+                carousel1.style.transition = '3s'
+                carousel2.style.transition = '3s'
+                carousel3.style.transition = '3s'
+            }
+
+        }
+
+//REINICIAR ESSE TIMER QUANDO ELE CLICA EM UM BOTAO
+
+    </script>
 </body>
 
 </html>

@@ -3,7 +3,9 @@ body {
   min-width: 1220px;
   height: 100%; /*altura*/
   margin: 0 auto; /*retira a barra horizontal do site; o normalize.css é uma biblioteca ja definida que voce usa pra normalizar as tags do site*/
-  }
+  box-sizing: border-box;
+  padding: 0;  
+}
   ul {
   padding: 0px!important; /*impede que o navegador mude o posicionamento das palavras e logos com o comando import sobrepondo o comando do site;se usar o normalize nao precisa fazer isso*/
   }
@@ -16,13 +18,13 @@ body {
   #header {
     position: absolute;
     width: 100%;
-    height: 125px;
+    height: 95px;
     z-index: 100;
     background-color: rgb(255,255,255, 0.3);
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 3vw 0 2vw;
+    padding: 0 2vw 0 2vw;
     box-sizing: border-box;
     transition: 1s;
   }
@@ -31,7 +33,7 @@ body {
     top: 0;
     left: 0;
     transition: 1s;
-    height: 100px !important;
+    height: 80px !important;
     background-color: rgb(255,255,255, 0.7) !important;
   }
 
@@ -41,10 +43,15 @@ body {
   }
   /*Urls do Menu*/
   #menu-principal-urls {
-    box-sizing: border-box;
+    height: 100%;
+    width: 70%;
   }
   #menu-principal-urls ul {
-  margin: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0;
   }
   #menu-principal-urls ul li{
   list-style: none;
@@ -63,30 +70,37 @@ body {
   border-radius: 20px;
   padding: 7px 30px;
   }
-  .padding-urls {
+
+
+  /*Hover dos urls*/
+  .menu-principal-url-active {
+    background-color: #83bdc9 !important;
+    border-radius: 4px;
+  }
+  .menu-principal-url-active a {
+    color: white !important;
+    padding: 7px 10px;
+  }
+
+  .menu-principal-urls-cor a{
+  color: black;
   padding: 7px 10px;
   }
-  .espaço {
-  margin-left: 60px; /*coloca o espaço entre as urls*/
-  }
-  /*Hover dos urls*/
-  .menu-principal-urls-hover {
-  background-color: #83bdc9;
-  color: white;
-  border-radius: 4px;
-  }
-  .menu-principal-urls-cor {
-  color: black;
-  }
+
   .menu-principal-urls-cor:hover{
   background-color: #83bdc9;
-  color: white;
   border-radius: 4px;
   }
+
+  .menu-principal-urls-cor a:hover {
+    color: white;
+  }
+
   #botao-agendar:hover {
   color: black;
   background-color: cadetblue;
   }
+
 
   /*Quadro Informativo*/
   #quadro {
@@ -244,6 +258,7 @@ textarea:focus {
   }
   .quadros-informativos:hover {
   background: url(../img/quadro-diverso-hover.png) left bottom no-repeat;
+  cursor: pointer;
   }
 
   /*Quadro Agendar Consulta*/
@@ -335,6 +350,9 @@ textarea:focus {
   }
   textarea {
   height: 150px;
+  }
+  #submit {
+    cursor: pointer;
   }
 
 /*Rodapé*/

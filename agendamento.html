@@ -8,7 +8,7 @@
 
 <body>
     <header id="menu-principal">
-        <div id="header-1">
+        <div id="header">
             <div id="logo">
                 <a href="" title="Nome do logo">
                     <img src="./img/wit-logo.png" style="height: 72px;" alt="Nome do logo">
@@ -17,51 +17,78 @@
             <div id="menu-principal-urls">
                 <ul>
                     <li class="menu-principal-urls-cor">
-                        <a href="index.html" class="menu-principal-urls-cor padding-urls">Início</a>
+                        <a href="index.html">Início</a>
                     </li>
-                    <li class="espaço menu-principal-urls-cor">
-                        <a href="equipe.html" class="menu-principal-urls-cor padding-urls">Profissionais</a>
+                    <li class="menu-principal-urls-cor">
+                        <a href="equipe.html">Profissionais</a>
                     </li>
-                    <li class="espaço menu-principal-urls-cor">
-                        <a href="procedimentos.html" class="menu-principal-urls-cor padding-urls">Procedimentos</a>
+                    <li class="menu-principal-urls-cor">
+                        <a href="procedimentos.html">Procedimentos</a>
                     </li>
-                    <li class="espaço menu-principal-urls-cor">
-                        <a href="sobre.html" class="menu-principal-urls-cor padding-urls">A Clínica</a>
+                    <li class="menu-principal-urls-cor">
+                        <a href="sobre.html">A Clínica</a>
                     </li>
-                    <li href="agendamento.html" class="espaço">
+                    <li href="agendamento.html">
                         <a href="agendamento.html" id="botao-agendar">Agendar</a>
                     </li>
                 </ul>
             </div>
         </div>
-        <div id="quadro">
+
+
+        <div id="carousel">
+
+            <div id="carousel-inner">
+                <img src="./img/fundo-provisório.jpg" id="carousel-image-1" alt="...">
+
+                <img src="./img/banner.png" id="carousel-image-2" alt="...">
+
+                <img src="./img/imagem3.png" id="carousel-image-3" alt="...">
+
+
+
+                <div id="carousel-indicators">
+                    <button onclick="showSlide(1)" id="carousel-button-1"></button>
+
+                    <button onclick="showSlide(2)" id="carousel-button-2"></button>
+
+                    <button onclick="showSlide(3)" id="carousel-button-3"></button>
+                </div>
+            </div>
+
+
+            <!--<button id="carousel-prev" onclick="show(-1)">&lt;</button>
+            <button id="carousel-next" onclick="show(+1)">&gt;</button>-->
         </div>
+
+
+
     </header>
 
     <div id="menu-endereços">
         <div id="endereço">
-            <img src="./img/provisorio.png">
+            <img src="./img/insta-psd.png">
             <span>
                 <span class="item-tittle">Uberlândia, MG</span>
                 <span class="descrição">Rio Grande do Norte, 2594</span>
             </span>
         </div>
-        <div id="endereço-2">
-            <img src="./img/provisorio-2.png">
+        <div id="endereço">
+            <img src="./img/insta-psd.png">
             <span>
                 <span class="item-tittle">34 9 9632 5828</span>
                 <span class="descrição">Entre em contato</span>
             </span>
         </div>
-        <div id="endereço-3">
-            <img src="./img/provisorio-3.png">
+        <div id="endereço">
+            <img src="./img/insta-psd.png">
             <span>
                 <span class="item-tittle">Agende sua consulta</span>
                 <span class="descrição">34 3211 8838</span>
             </span>
         </div>
-        <div id="endereço-4">
-            <img src="./img/provisorio-4.png">
+        <div id="endereço">
+            <img src="./img/insta-psd.png">
             <span>
                 <span class="item-tittle">Horário de Atendimento </span>
                 <span class="descrição">Seg à Sex: 8h às 19h</span>
@@ -102,7 +129,20 @@
         <div class="imagens-qualidades"></div>
     </div>
 
-    <div id="formulario"></div>
+    <section id="caixa-formulario">
+        <div id="formulario">
+            <p id="form-tittle">Envie-nos uma mensagem</p>
+            <p id="form-subtittle">Solicite uma consulta ou tire dúvidas!
+            </p>
+            <form id="form" method="POST" action="./formulario.php">
+                <input class="field" name="nome" placeholder="Nome Completo" required>
+                <input class="field" name="telefone" placeholder="Telefone" required>
+                <input class="field" type="email" name="email" placeholder="E-mail" required>
+                <textarea class="field" name="mensagem" placeholder="Digite sua mensagem"></textarea>
+                <input class="field" type="submit" value="Enviar" id="submit">
+            </form>
+        </div>
+    </section>
 
     <div id="rodape">
         <div id="img-rodape">
@@ -153,6 +193,83 @@
         <a class="texto-direitos">LG Odontologia. Todos os direitos reservados.</a>
 
     </div>
+
+
+    <script src="./js/main.js"></script>
+
+    <script>
+        //Carousel
+        window.onload = mainTimer()
+        var intervalo = setInterval(mainTimer, 30000)
+
+        function mainTimer() {
+            setTimeout(timer, 0)
+            setTimeout(timer2, 10000)
+            setTimeout(timer3, 20000)
+        }
+
+        function timer() {
+            showSlide(1)
+        }
+        function timer2() {
+            showSlide(2)
+        }
+        function timer3() {
+            showSlide(3)
+        }
+
+
+        function showSlide(number) {
+            var carousel1 = document.getElementById('carousel-image-1')
+            var carousel2 = document.getElementById('carousel-image-2')
+            var carousel3 = document.getElementById('carousel-image-3')
+
+
+            if (number == 1) {
+                document.getElementById('carousel-button-1').classList.add('slide-button-active')
+                document.getElementById('carousel-button-2').classList.remove('slide-button-active')
+                document.getElementById('carousel-button-3').classList.remove('slide-button-active')
+
+                carousel1.style.opacity = '1'
+                carousel2.style.opacity = '0'
+                carousel3.style.opacity = '0'
+
+                carousel1.style.transition = '3s'
+                carousel2.style.transition = '3s'
+                carousel3.style.transition = '3s'
+
+            } else if (number == 2) {
+                document.getElementById('carousel-button-1').classList.remove('slide-button-active')
+                document.getElementById('carousel-button-2').classList.add('slide-button-active')
+                document.getElementById('carousel-button-3').classList.remove('slide-button-active')
+
+                carousel1.style.opacity = '0'
+                carousel2.style.opacity = '1'
+                carousel3.style.opacity = '0'
+
+                carousel1.style.transition = '3s'
+                carousel2.style.transition = '3s'
+                carousel3.style.transition = '3s'
+
+            } else if (number == 3) {
+                document.getElementById('carousel-button-1').classList.remove('slide-button-active')
+                document.getElementById('carousel-button-2').classList.remove('slide-button-active')
+                document.getElementById('carousel-button-3').classList.add('slide-button-active')
+
+                carousel1.style.opacity = '0'
+                carousel2.style.opacity = '0'
+                carousel3.style.opacity = '1'
+
+                carousel1.style.transition = '3s'
+                carousel2.style.transition = '3s'
+                carousel3.style.transition = '3s'
+            }
+
+        }
+
+//REINICIAR ESSE TIMER QUANDO ELE CLICA EM UM BOTAO
+
+    </script>
 </body>
 
 </html>
