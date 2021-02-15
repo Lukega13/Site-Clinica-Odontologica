@@ -149,7 +149,7 @@ body {
     opacity: 0;
   }
 
-  /*#carousel-prev, #carousel-next {
+  #carousel-prev, #carousel-next {
     font-size: 32px;
     display: flex;
     align-items: center; 
@@ -166,7 +166,7 @@ body {
   }
   #carousel-next {
     position: absolute; right: 0; top: 50%;
-  }*/
+  }
 
   #carousel-indicators {
     width: 100%;
