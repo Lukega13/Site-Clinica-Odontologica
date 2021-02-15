@@ -39,26 +39,26 @@
         <div id="carousel">
 
             <div id="carousel-inner">
-                <img src="./img/fundo-provisório.jpg" id="carousel-image-1" alt="...">
+                <img class="carousel-items" src="./img/fundo-provisório.jpg" id="carousel-image-1" alt="...">
 
-                <img src="./img/banner.png" id="carousel-image-2" alt="...">
+                <img class="carousel-items" src="./img/banner.png" id="carousel-image-2" alt="...">
 
-                <img src="./img/imagem3.png" id="carousel-image-3" alt="...">
+                <img class="carousel-items" src="./img/imagem3.png" id="carousel-image-3" alt="...">
 
 
 
                 <div id="carousel-indicators">
-                    <button onclick="showSlide(1)" id="carousel-button-1"></button>
+                    <button onclick="showSlide(0)" id="carousel-button-1"></button>
 
-                    <button onclick="showSlide(2)" id="carousel-button-2"></button>
+                    <button onclick="showSlide(1)" id="carousel-button-2"></button>
 
-                    <button onclick="showSlide(3)" id="carousel-button-3"></button>
+                    <button onclick="showSlide(2)" id="carousel-button-3"></button>
                 </div>
             </div>
 
 
-            <button id="carousel-prev" onclick="show(-1)">&lt;</button>
-            <button id="carousel-next" onclick="show(+1)">&gt;</button>
+            <!-- <button class="carousel-buttons" id="carousel-prev" onclick="goPrev()">&lt;</button>
+            <button class="carousel-buttons" id="carousel-next" onclick="goNext()">&gt;</button> -->
         </div>
 
 
@@ -199,33 +199,35 @@
 
     <script>
         //Carousel
-        window.onload = mainTimer()
-        var intervalo = setInterval(mainTimer, 30000)
+        document.getElementById('carousel-button-1').classList.add('slide-button-active')
+        let totalSlides = document.querySelectorAll('.carousel-items').length
+        let currentSlide = 0
 
-        function mainTimer() {
-            setTimeout(timer, 0)
-            setTimeout(timer2, 10000)
-            setTimeout(timer3, 20000)
+        function goPrev() {
+            currentSlide--
+            if (currentSlide = 0) {
+                currentSlide = (totalSlides - 1)
+            }
+            showSlide(currentSlide)
         }
 
-        function timer() {
-            showSlide(1)
-        }
-        function timer2() {
-            showSlide(2)
-        }
-        function timer3() {
-            showSlide(3)
+        function goNext() {
+            currentSlide++
+            if (currentSlide > (totalSlides - 1)) {
+                currentSlide = 0
+            }
+            showSlide(currentSlide)
         }
 
+        setInterval(goNext, 10000)
 
-        function showSlide(number) {
+
+        function showSlide(slide) {
             var carousel1 = document.getElementById('carousel-image-1')
             var carousel2 = document.getElementById('carousel-image-2')
             var carousel3 = document.getElementById('carousel-image-3')
 
-
-            if (number == 1) {
+            if (slide == 0) {
                 document.getElementById('carousel-button-1').classList.add('slide-button-active')
                 document.getElementById('carousel-button-2').classList.remove('slide-button-active')
                 document.getElementById('carousel-button-3').classList.remove('slide-button-active')
@@ -234,11 +236,7 @@
                 carousel2.style.opacity = '0'
                 carousel3.style.opacity = '0'
 
-                carousel1.style.transition = '3s'
-                carousel2.style.transition = '3s'
-                carousel3.style.transition = '3s'
-
-            } else if (number == 2) {
+            } else if (slide == 1) {
                 document.getElementById('carousel-button-1').classList.remove('slide-button-active')
                 document.getElementById('carousel-button-2').classList.add('slide-button-active')
                 document.getElementById('carousel-button-3').classList.remove('slide-button-active')
@@ -247,11 +245,7 @@
                 carousel2.style.opacity = '1'
                 carousel3.style.opacity = '0'
 
-                carousel1.style.transition = '3s'
-                carousel2.style.transition = '3s'
-                carousel3.style.transition = '3s'
-
-            } else if (number == 3) {
+            } else if (slide == 2) {
                 document.getElementById('carousel-button-1').classList.remove('slide-button-active')
                 document.getElementById('carousel-button-2').classList.remove('slide-button-active')
                 document.getElementById('carousel-button-3').classList.add('slide-button-active')
@@ -259,15 +253,10 @@
                 carousel1.style.opacity = '0'
                 carousel2.style.opacity = '0'
                 carousel3.style.opacity = '1'
-
-                carousel1.style.transition = '3s'
-                carousel2.style.transition = '3s'
-                carousel3.style.transition = '3s'
             }
 
         }
 
-//REINICIAR ESSE TIMER QUANDO ELE CLICA EM UM BOTAO
 
     </script>
 </body>
