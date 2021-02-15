@@ -1,10 +1,16 @@
+* {
+  margin: 0; 
+  box-sizing: border-box;
+  padding: 0;  
+}
 body {
   width: 100%; /*largura*/
   min-width: 1220px;
   height: 100%; /*altura*/
   margin: 0 auto; /*retira a barra horizontal do site; o normalize.css é uma biblioteca ja definida que voce usa pra normalizar as tags do site*/
   box-sizing: border-box;
-  padding: 0;  
+  padding: 0; 
+  /* overflow-x: hidden; */
 }
   ul {
   padding: 0px!important; /*impede que o navegador mude o posicionamento das palavras e logos com o comando import sobrepondo o comando do site;se usar o normalize nao precisa fazer isso*/
@@ -18,7 +24,7 @@ body {
   #header {
     position: absolute;
     width: 100%;
-    height: 105px;
+    height: 90px;
     z-index: 100;
     background-color: rgb(255,255,255, 0.3);
     display: flex;
@@ -41,6 +47,12 @@ body {
   #logo {
     height: auto;
   }
+  #logo a img {
+    height: 72px;
+    width: 240px;
+    object-fit: contain;
+  }
+
   /*Urls do Menu*/
   #menu-principal-urls {
     height: 100%;
@@ -57,43 +69,52 @@ body {
   list-style: none;
   float: left;
   text-decoration: none;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   }
   #menu-principal-urls ul li a{
   text-decoration: none; /*retida o sublinhado do texto*/
   font-size: 21px; /*tamanho da fonte do texto*/
   font-family: sans-serif;
   line-height: 38px;
+  height: 100%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
   }
   #botao-agendar {
-  color: white;
-  background-color: #73b69f;
-  border-radius: 20px;
-  padding: 7px 30px;
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    text-decoration: none;
+    background-color: #73b69f;
+    border-radius: 20px;
+    padding: 7px 30px;
+  }
+
+  #menu-principal-agendar {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
 
   /*Hover dos urls*/
   .menu-principal-url-active {
-    background-color: #83bdc9 !important;
-    border-radius: 4px;
-  }
-  .menu-principal-url-active a {
-    color: white !important;
-    padding: 7px 10px;
+    border-bottom: 2px solid #83bdc9 !important;
   }
 
   .menu-principal-urls-cor a{
   color: black;
-  padding: 7px 10px;
   }
 
   .menu-principal-urls-cor:hover{
-  background-color: #83bdc9;
-  border-radius: 4px;
-  }
-
-  .menu-principal-urls-cor a:hover {
-    color: white;
+    border-bottom: 2px solid #83bdc9 !important;
   }
 
   #botao-agendar:hover {
@@ -115,6 +136,7 @@ body {
     margin: 0;
     position: relative;
     height: 100vh;
+    width: 100%;
   }
 
   #carousel-inner {
@@ -271,49 +293,54 @@ textarea:focus {
   #agende-sua-consulta {
   background-color: #21acc2;
   height: 150px;
-  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
   }
-  .agende-texto {
+  #agende-texto h1 {
   color: white;
-  left: 14%;
   font-size: 26px;
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
   }
-  .agende {
+
+  #agende {
+    height: fit-content;
+    text-decoration: none;
+  }
+  #agende:hover {
+    color: black;
+    background-color: #247995;
+    }
+    #agende:active {
+    color: white;
+    background-color: #24b1e0;
+    }
+
+  #agende a{
   color: white;
-  width: 26%;
+  width: 350px;
   height: 48px;
   border: 2px solid #2e87a4;
-  border-radius: 3px;
   margin: 0;
-  position: absolute;
-  top: 50%;
-  left: 62%;
-  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  text-decoration: none;
   }
-  .agende:hover {
-  color: black;
-  background-color: #247995;
+
+  #agendar-texto {
+    font-size: 16px;
+    margin: 0 0 0 40px;
+    text-transform: uppercase;
+    text-decoration: none;
   }
-  .agende:active {
-  color: white;
-  background-color: black;
-  }
-  .agendar-texto {
-  position: absolute;
-  font-size: 16px;
-  margin-left: 15%;
-  text-transform: uppercase;
-  }
-  .icone-agende {
+
+  #icone-agende {
   border-style: none;
-  position: relative;
   }
-  .icone-agendar {
-  float: right; /* ou usar margin-left: 86%;*/
+  #icone-agende img {
+    height: 44px;
+    object-fit: contain;
   }
 
 /*Quadro Qualidades*/

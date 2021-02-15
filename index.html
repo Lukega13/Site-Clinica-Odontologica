@@ -1,38 +1,55 @@
 <html>
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>LG Odontologia</title>
+
     <link rel="stylesheet" type="text/css" href="./css/main.css">
-    <title>Título Site</title>
-    <meta charset="utf-8">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+    </style>
 </head>
 
 <body>
     <header id="menu-principal">
+
         <div id="header">
-            <div id="logo">
-                <a href="" title="Nome do logo">
-                    <img src="./img/wit-logo.png" style="height: 72px;" alt="Nome do logo">
-                </a>
-            </div>
+
             <div id="menu-principal-urls">
+
                 <ul>
+                    <li id="logo">
+                        <a href="" title="Nome do logo">
+                            <img src="./img/wit-logo.png" alt="Nome do logo">
+                        </a>
+                    </li>
+
                     <li class="menu-principal-url-active">
                         <a href="index.html">Início</a>
                     </li>
+
                     <li class="menu-principal-urls-cor">
                         <a href="equipe.html">Profissionais</a>
                     </li>
+
                     <li class="menu-principal-urls-cor">
                         <a href="procedimentos.html">Procedimentos</a>
                     </li>
+
                     <li class="menu-principal-urls-cor">
                         <a href="sobre.html">A Clínica</a>
                     </li>
-                    <li href="agendamento.html">
-                        <a href="agendamento.html" id="botao-agendar">Agendar</a>
-                    </li>
                 </ul>
+
             </div>
+
+            <div id="menu-principal-agendar">
+                <a href="agendamento.html" id="botao-agendar">Agendar</a>
+            </div>
+
         </div>
 
 
@@ -109,18 +126,22 @@
     </div>
 
     <div id="agende-sua-consulta">
-        <div>
-            <p class="agende-texto">Agende sua consulta agora mesmo</p>
-        </div>
-        <span>
-            <a href="agendamento.html" class="agende">
-                <p class="agendar-texto">Agendar consulta</p>
-                <span class="icone-agende">
-                    <img class="icone-agendar" src="./img/twitter-psd-2.png">
-                </span>
 
+        <div id="agende-texto">
+            <h1>Agende sua consulta agora mesmo</h1>
+        </div>
+
+        <div id="agende">
+
+            <a href="agendamento.html">
+                <h1 id="agendar-texto">Agendar consulta</h1>
+
+                <div id="icone-agende">
+                    <img src="./img/twitter-psd-2.png">
+                </div>
             </a>
-        </span>
+
+        </div>
     </div>
 
     <div id="qualidades">
