@@ -157,7 +157,7 @@
             </p>
             <form id="form" method="POST" action="./formulario.php">
                 <input class="field" name="nome" placeholder="Nome Completo" required>
-                <input class="field" name="telefone" placeholder="Telefone" required>
+                <input class="field" id="telefone-input" name="telefone" placeholder="Telefone" maxlength="15" required>
                 <input class="field" type="email" name="email" placeholder="E-mail" required>
                 <textarea class="field" name="mensagem" placeholder="Digite sua mensagem"></textarea>
                 <input class="field" type="submit" value="Enviar" id="submit">
@@ -275,6 +275,27 @@
                 carousel2.style.opacity = '0'
                 carousel3.style.opacity = '1'
             }
+
+        }
+
+
+        // Máscaras dos inputs
+
+        let tel_input = document.getElementById("telefone-input")
+        tel_input.addEventListener('keyup', telMask)
+
+        function mask(v) {
+            v = v.replace(/\D/g, "");
+            v = v.replace(/^(\d{2})(\d)/g, "($1) $2");
+            v = v.replace(/(\d)(\d{4})$/, "$1-$2");
+
+            document.getElementById("telefone-input").value = v
+        }
+
+        function telMask() {
+
+            let tel_value = document.getElementById("telefone-input").value
+            mask(tel_value)
 
         }
 
